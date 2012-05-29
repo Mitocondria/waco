@@ -1,63 +1,596 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Waco by Mitocondria</title>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js ie6" lang="es"> <![endif]-->
+<!--[if IE 7 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js ie7" lang="es"> <![endif]-->
+<!--[if IE 8 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js ie8" lang="es"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title></title>
+	<meta name="description" content="" />
+	<link rel="shortcut icon" href="http://peru.info/sites/4d7003605b30553c28000005/theme/images/favicon.ico" />
+	<link rel="apple-touch-icon" href="http://peru.info/apple-touch-icon.png" />
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" />  
+	<link rel="stylesheet" type="text/css" href="./css/fonts.css" />  
+	<link rel="stylesheet" type="text/css" href="./css/styles_full.css" />  
+	<link rel="stylesheet" type="text/css" href="./js/jquery.fancybox-1.3.4.css" />  
+	<script type="text/javascript" src="./js/SetCookieAndReloadNodes.js"></script>
+    <!--[if IE ]>
+	<link rel="stylesheet" type="text/css" href="./css/ie.css" />
+	<![endif]-->  
+	<!-- <link rel="stylesheet" type="text/css" href="./css/jquery.countdown.css" />   -->
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		$("#sombra").click(function(){
+			disablePopup();
+		});
+	}
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Waco</h1>
-        <p></p>
-        <p class="view"><a href="https://github.com/Mitocondria/waco">View the Project on GitHub <small>Mitocondria/waco</small></a></p>
-        <ul>
-          <li><a href="https://github.com/Mitocondria/waco/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Mitocondria/waco/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Mitocondria/waco">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+	function abrirPopup(){
+		var url = location.href;
+		var index = url.length;
+		var parameter=url.lastIndexOf("/");
+		url=url.substring(parameter,index);
+      
+		var textos="/#use";
+		if(textos!=url)
+		{
+			$("#sombra").css('width',$(document).width());
+			$("#sombra").css('height',$(document).height());
+			$("#sombra").fadeTo(400, 0.6,function(){
+				$("#popupcampana").fadeIn(400);                    
+			});
+		}
+    }
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+	function cerrarPopup(){
+		$("#popupcampana").fadeOut(400,function(){
+			$("#sombra").fadeOut(400);                     
+		});  
+    }
+	
+	function disablePopup(){
+		//disables popup only if it is enabled
+		if(popupStatus==1){
+			$("#sombra").fadeOut("slow");
+			$("#popupcampana").fadeOut("slow");
+			popupStatus = 0;
+		}
+	}
+	</script>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+	<style>
+	#sombra{
+		display:none;
+		z-index:9999;
+		position:absolute;
+		background-color:#000;
+	}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+    #popupcampana{
+		/* width:588px; */
+		width:auto;
+		/*height:385px; */
+		height:auto;
+		top:130px;
+		left:50%;
+		margin-left:-294px;
+		z-index:10000;
+		position:fixed;
+		display:none;
+    }
+	</style>
+</head>
+<body class="home">
+	<div id="bg-header" class="wrapper"></div>
+	<div class="bg-wrapper">
+		<div id="header" class="wrapper">
+			<br>
+			<h1 id="logo"><a href="#home" class="home anchorLink">asdfasdfasdf</a></h1>
+			
+			<ul id="follow-us">
+				<li class="title"><span id="ContentPlaceHolderDefault_langMenuPrincipalHom_2_lbl_siguenos">Síguenos</span></li> 
+				<li class="link"><a class="facebook" target="_blank"  href="http://facebook.com/waco.peru">Facebook</a></li> 
+			</ul> 
+			<br>
+			<ul  id="menu">  
+				<br>
+				<li>
+					<a href='#brand' class='brand anchorLink'>Sobre<span style='margin-top:3px;'>Waco</span></a>
+				</li>
+				<li>
+					<a href='#how' class='how anchorLink'>Origen de la <span style='margin-top:3px'>Idea</span></a>
+				</li>
+				<li>
+					<a href='#what' class='what anchorLink'>Momentos <span style='margin-top:3px'>Importantes</span></a>
+				</li>
+				<li>
+					<a href='#why' class='why anchorLink'>El<span style='margin-top:3px'>Equipo</span></a>
+				</li>
+			</ul> 
+		</div>
+	</div>
 
-<h3>Designer Templates</h3>
+	<div id="container" class="wrapper">
+		<ul class="wrapper">
+			<li class="section" id="section-home">
+				<a id="home" name="home" class="link-anchor"></a>
+				<div class='banner-bg'>
+					<div class='banner'>
+						<ul class='banner-links'>
+							<li class='cufon'>
+								<a href='http://www.youtube.com/watch?v=8joXlwKMkrk' class='cufon video_display'>Documental Marca Perú (Versión Oficial de la Campaña Nacional)</a>
+							</li>
+							<li class='video' style='list-style:none;'>
+								<a class='video_display' href='http://www.youtube.com/watch?v=8joXlwKMkrk'><span class='pley'></span><img src='/media/36164/img-bus-peru.jpg' width='122' height='84' /></a> 
+							</li>
+							<li>
+								<a href='http://apps.facebook.com/embajadoresperuanos/' target='_blank' class='cufon'>Sé un Embajador Peruano</a>
+							</li>
+							<li>
+								<a href='http://www.youtube.com/watch?v=clZ9IOt-sv8' class='cufon' target='_blank'>Detrás de Cámaras del Documental</a>
+							</li>
+						</ul>
+						<div class='banner-content'>
+							<img src='./media/waco-inicio.jpg' width='855' height='325' />
+						</div>
+					</div>
+				</div>
+				<div class=" clearfix" style="height: 13px;"></div>
+				<div class="content clearfix">
+					<div id="home_news">
+					<!--<h2>Noticias</h2>-->
+					<h2><span id="ContentPlaceHolderDefault_langListNewShort_4_Lbl_titulonoticias">Noticias</span></h2>
+					<ul class="comments">
+						<li class='comment clearfix'>
+							<div class='avatar'>
+								<div class='bg'> </div>
+								<img width='107' height='65' src='/media/43616/effie3.jpg' />
+							</div>
+							<div class='comment-content'>
+								<h4><a href='/noticias/2012/mayo/premios_effie_2012/'>La Marca Perú recibe máximo galardón de los Effie 2012</a></h4>
+								<div>
+									<p>PromPerú resultó ganador del Gran Effie 2012 por el lanzamiento de la campaña de la Marca País en el Perú. Este galardón se otorga al mejor entre los ganadores de los Effie de Oro en todas las categorías en competencia.</p>
+								</div>
+								<a  href='/noticias/2012/mayo/premios_effie_2012/'>Leer Más</a>
+							</div>
+						</li>
+						<li class='comment clearfix'>
+							<div class='avatar'>
+								<div class='bg'> </div>
+								<img width='107' height='65' src='/media/43568/03.jpg' />
+							</div>
+							<div class='comment-content'>
+								<h4><a href='/noticias/2012/mayo/mi_tierra_un_producto/'>Ministro Silva lanza programa de desarrollo sostenible para Quinua en Ayacucho</a></h4>
+								<div>
+									<p>El ministro de Comercio Exterior y Turismo, José Luis Silva Martinot,  lanzó el programa “De mi Tierra, Un Producto” en la localidad de Quinua (Ayacucho)...</p>
+								</div>
+								<a  href='/noticias/2012/mayo/mi_tierra_un_producto/'>Leer Más</a>
+							</div>
+						</li>
+					</ul>
+					<div class="see-all">
+						<a href='/noticias/'>Noticias Anteriores</a>
+						<!--<a href="/noticias/">Noticias Anteriores</a>-->
+					</div>
+				</div>
+				<div id="home_events">
+					<h2><span id="ContentPlaceHolderDefault_langMainListEventosHome_5_lbl_tituloEventos">Agenda</span></h2>
+					<ul class="events">
+						<li class='event clearfix'>
+							<div class='event-content'>
+								<h3>mayo 16 - 27</h3>
+								<div>
+									<p style='text-align: justify;'>Festival de Cannes</p>
+								</div>
+							</div>
+							<a href='/agenda/2012/mayo/festival_cannes/' class='event-details'>Ver Detalles</a>
+						</li>
+						<li class='event clearfix'>
+							<div class='event-content'>
+								<h3>mayo 26 - 27</h3>
+								<div>
+									<p style='text-align: justify;'>Festival de deportes de aventura en Luna</p>
+								</div>
+							</div>
+							<a href='/agenda/2012/mayo/festival_deportes_aventura_lunahuana/' class='event-details'>Ver Detalles</a>
+						</li>                 
+					</ul>
+					<div class="see-all">
+						<a href='/agenda/'>Todos los Eventos</a>
+						<!--<a href="/agenda.aspx">Todos los Eventos</a>-->
+					</div>
+				</div>
+			</div>
+			<li class='section' id='section-brand'>
+				<a id='brand' name='brand' class='link-anchor'></a>
+				<div class='banner-dif'>
+					<img src='/media/1263/yellow_diffused_background.jpg' width='1907' height='326' />
+				</div>
+				<div class='banner'>
+					<div class='banner-content'>
+						<img src='./media/vectorizacion.png' width='855' height='325' />
+					</div>
+				</div>
+				<div class='content clearfix'>
+					<ul class='clearfix'>
+						<li class='left-column'>
+							<h3>El Inicio</h3><h4></h4>
+							<p>Como parte de una estrategia de promoción del país en el
+							exterior, se decidió el proceso de la construcción de la Marca País
+							Perú, buscando impulsar aquellos sectores comerciales con mayor
+							exposición internacional: turismo, exportaciones y la atracción de
+							inversiones.</p>
+							
+							<p>Pensar en un país como una marca trae el desafío de destacarse,
+							llamar la atención, y transmitir una promesa clara.</p>
+							
+							<p>Los países compiten entre sí para atraer la atención de turistas
+							e inversores, lograr incrementar la demanda de sus productos y
+							servicios, y ganar el respeto de los gobiernos de otras naciones,
+							entre otras cosas. Una Marca País fuerte y positiva constituye una
+							ventaja competitiva clave a la hora de lograr una mayor y mejor
+							recordación en la gente.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+							<h4></h4><h4></h4><h4></h4>
+						</li>
+						<li class='right-column'>
+							<h3>El Momento</h3><h4></h4>
+							<p>El país se encuentra protagonizando un proceso de renovación,
+							crecimiento económico sostenido y consolidación dentro del mapa
+							mundial.</p>
 
-<h3>Rather Drive Stick?</h3>
+							<p>Se ha logrado mejoras en la participación de nuevos sectores en
+							la industria, aumento de gasto público, inversión en
+							infraestructura civil y turística, así como lograr estabilidad
+							política y social.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+							<p>Los peruanos están destacando a nivel mundial en distintas
+							disciplinas: deporte, cine, literatura.</p>
+							
+							<p>Es este el mejor momento para contarle al mundo lo bueno que
+							está pasando en el país. Y esa es una ventaja competitiva.</p>
 
-<h3>Authors and Contributors</h3>
+							<h4></h4><h4></h4><h4></h4>
+						</li>
+					</ul>
+				</div>
+				<div class='content clearfix'>
+					<ul class='clearfix'>
+						<li class='left-column'><h3>Los Tres Pilares</h3><h4>Turismo</h4>
+							<p>Este es un destino turístico que se elige a conciencia, con
+							conocimiento previo, sabiendo lo que se busca. Al Perú no se llega
+							de casualidad.El turista que viene a Perú tiene intereses
+							particulares. Sus inquietudes, pasiones, deseos, constituyen la
+							brújula que los lo guía por nuestra tierra. Por eso aquí cada quien
+							delinea un recorrido personal, diferente, que le permite
+							adentrarse, descubrir, cultivarse, vivir.Ya haya sido traído aquí
+							por su interés por la historia, la arqueología, la gastronomía, la
+							música, los caballos o el surf, el Perú propone a quienes lo
+							vistan, descubrir y descubrirse. Transformar y transformarse. Su
+							gente, sus lugares, sus sabores, propician ese descubrimiento y esa
+							transformación.La experiencia Perú es tan particular como cada uno
+							de quienes la emprenden. Y así, además de alimentar sus intereses
+							iniciales, se despiertan nuevos intereses, deseos, pasiones. Porque
+							siempre quien nos visita por una cosa descubre muchas otras y
+							siente deseos de volver, de adentrarse más en el Perú.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+							<h4> Exportaciones</h4>
+							<p>Los productos del Perú, en especial aquellos que pueden
+							considerarse exportaciones no tradicionales, son singulares,
+							inusuales y alejados de la masividad. Pero por sobre todo, son
+							reconocidos por su excelente calidad.</p>
+							
+							<p>En el sector textil, el mundo admira el algodón peruano,
+							presente en las confecciones más finas y delicadas, y valora
+							enormemente la fibra de vicuña o alpaca (animal que se desarrolla
+							en condiciones adversas y en pocos sitios del mundo) por su
+							delicadeza extremadamente superior a la de la lana de oveja.</p>
 
-<h3>Support or Contact</h3>
+							<h4></h4><h4></h4>
+						</li>
+						<li class='right-column'>
+							<h3></h3><h4></h4>
+							<p>El café peruano es café gourmet, orgánico, derivado de
+							conocimientos profundos y amor y cuidado por la tierra.</p>
+							
+							<p>El mundo recién está descubriendo el sacha inchi, mientras que
+							aquí ha sido utilizado desde tiempos inmemoriales, y lo mismo
+							sucede con la lúcuma y con tantos otros productos (naturales,
+							artesanales e industriales) que el Perú tiene para ofrecer.</p>
+							
+							<h4>Inversiones</h4>
+							<p>La ecuación que el Perú propone a sus inversores resulta
+							ampliamente satisfactoria y conjuga diversos atractivos. Por un
+							lado, las estadísticas demuestran un crecimiento sostenido. Por
+							otro, las oportunidades son tantas y tan diversas que el campo para
+							invertir pareciera no tener límites. Si a esto se le suma el clima
+							pro-negocios generado por un marco legal estable y seguro, podemos
+							afirmar que el Perú constituye un terreno fértil para la
+							inversión.Aquí solemos decir que está todo por hacerse, en
+							referencia a las posibilidades de desarrollo de proyectos de
+							infraestructura. Puertos, aeropuertos, rutas, autopistas,
+							hotelería, telecomunicaciones… &nbsp;Pero también, por su gran
+							biodiversidad, el Perú tiene un enorme potencial energético y es
+							ideal para desarrollar actividades vinculadas con los recursos
+							naturales, tales como pesca, acuicultura, minería, agricultura, o
+							bien las industrias textil, petroquímica, forestal, entre otras.Y
+							en la experiencia de quienes ya hacen negocios con nuestro país, a
+							medida que uno se adentra en el Perú, descubre nuevas
+							oportunidades.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/Mitocondria">Mitocondria</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+							<h4></h4><h4></h4>
+						</li>
+					</ul>
+				</div>
+				<div class='content clearfix'>
+					<ul class='clearfix'>
+						<li class='left-column'><h3>El Sistema de Identidad</h3><h4></h4>
+							<p>El foco de la identidad está centrado en la palabra Perú, un
+							nombre inclusivo, que no le pertenece ninguna cultura específica,
+							sino que es el producto de una experiencia de cruces, mezclas y
+							deseos.</p>
+							
+							<p>Por tratarse de una marca que deberá servir a diversos sectores,
+							la marca no incorpora ningún complemento verbal adicional a su
+							nombre: se propone como el núcleo de un ecosistema comunicacional
+							amplio, que admite múltiples mensajes, imágenes, conceptos,
+							paisajes, culturas, permitiendo así que cada uno de los sectores
+							decida en cada comunicación.</p>
+							
+							<h4>El Rojo</h4>
+							<p>El color de la bandera, un color intenso, vibrante, energético.
+							Un color que sirve para identificarnos en las tres áreas de
+							interés, turismo, exportaciones e inversiones.</p>
+
+							<p>El protagonismo del rojo en el sistema de identidad es
+							indudable, pero como uno de los atributos de marca es lo
+							polifacético, el sistema de identidad contempla una paleta
+							multicolor que representa las diferentes facetas del Perú, su
+							diversidad de regiones y paisajes, su carácter vibrante,
+							estimulante.</p>
+
+							<h4></h4><h4></h4>
+						</li>
+						<li class='right-column'><h3></h3><h4>La Forma</h4>
+							<p>La forma espiralada que asume la "P" refiere a uno de los
+							motivos gráficos presente en todas las culturas que nuestra tierra
+							vio nacer; evolución, cambio, transformación.</p
+
+							<p>Refiere también a una huella digital, en línea con el concepto
+							de "hay un Perú para cada quien" y por eso también el uso de una
+							tipografía manuscrita, construyendo un logotipo a partir de una
+							sola línea: cada quien traza su propio camino en base a sus
+							intereses particulares.</p>
+
+							<p>Las asociaciones mentales que relacionan lo histórico y lo
+							contemporáneo fueron altamente valoradas por los participantes de
+							los focus groups realizados a nivel nacional e internacional.</p>
+
+							<p>El sistema de identidad toma así grafismos de diferentes
+							regiones y culturas, usándolos para construir las gráficas que
+							recorren tanto planos de color como imágenes.</p>
+							
+							<h4></h4><h4></h4><h4></h4>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class='section' id='section-how'>
+				<a id='how' name='how' class='link-anchor'></a>
+				<div class='banner-dif'><img src='/media/1264/blue_diffused_background.jpg' width='1907' height='326' /></div>
+				<div class='banner'>
+					<div class='banner-content'>
+						<img src='./media/idea-inicial.jpg' width='855' height='325' />
+					</div>
+				</div>
+				<div class='content clearfix'>
+					<ul class='clearfix'>
+						<li class='left-column'>
+							<h3>El Equipo</h3><h4></h4>
+							<p>El proyecto comenzó el trabajo en julio de 2009.</p>
+							<p>La tarea contemplaba la observación y análisis de los
+							componentes de la identidad de un país multicultural y, por eso, un
+							equipo interdisciplinario de más de 15 integrantes de la empresa
+							FutureBrand se hizo cargo del desarrollo de la propuesta.</p>
+
+							<p>El trabajo fue liderado por PromPerú (Comisión de Promoción del
+							Perú para la Exportación y el Turismo) con el invalorable aporte de
+							Cancillería y ProInversión (Agencia de Promoción de la Inversión
+							Privada), por lo que las instituciones gubernamentales de las que
+							dependen estuvieron involucradas de lleno en el proceso Marca
+							País.</p>
+							<h4></h4>
+							<h3>&nbsp;El Descubrimiento</h3>
+							<p>La investigación implicó la interacción de profesionales de
+							diversas áreas así como la participación de un grupo de expertos
+							nacionales en diferentes materias.</p>
+							<p>Así, el proyecto se nutrió de las perspectivas, e ideas de
+							especialistas en marcas, marketing, turismo, comercio,
+							comunicaciones, diseño, producción, exportaciones, educación,
+							filosofía, arqueología y artes, entre otras.</p>
+							<p>De cada tópico se fueron desprendiendo otros que permitieron
+							tejer una trama rica e intrincada que empezó a develar un cuadro
+							muy completo del Perú.</p>
+							<p>Durante el proceso de desarrollo y creación de la marca, el
+							equipo recorrió ciudades de varios departamentos del Perú, sitios
+							arqueológicos, distritos artesanales, museos y diversas
+							instituciones.</p>
+							<h4></h4><h4></h4>
+						</li>
+						<li class='right-column'>
+							<h3></h3><h4></h4>
+							<p>El trabajo se complementó con entrevistas a audiencias, material
+							de archivo, estudios recientes y publicaciones, a lo que se sumó
+							información de los países competidores y la percepción del Perú en
+							los mercados interno y externo.</p>
+							
+							<h4></h4>
+							
+							<h3>El Posicionamiento</h3>
+							
+							<p>Con el análisis de los temas involucrados y el cruce de la
+							información desde diferentes ángulos y variables, se elaboraron
+							seis escenarios posibles de posicionamiento, eligiéndose finalmente
+							dos luego de la evaluación del equipo de trabajo y expertos.</p>
+							<h4></h4>
+							<h3>El Diseño</h3>
+							
+							<p>Se desarrollaron rondas de exploración de identidad visual
+							(logotipos, símbolos y gráficas para construir la marca), para
+							finalmente definir tres alternativas de diseño para llevar a
+							evaluación en mercados del exterior junto con la plataforma
+							conceptual definida.</p>
+							<h4></h4>
+							<h3>La Validación</h3>
+							<p>El 2010 fue un año de pruebas y presentaciones. El concepto y
+							diseño de la marca Perú fue presentado y validado por
+							representantes de los sectores involucrados, y profesionales
+							expertos que nos acompañaron durante todo el proceso de diagnóstico
+							y creación de la marca.</p>
+							<p>Algunas de las personalidades que nos acompañaron en este
+							proceso son hoy embajadores de la marca.</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class='section' id='section-what'>
+				<a id='what' name='what' class='link-anchor'></a><div class='banner-dif'><img src='/media/1265/green_diffused_1.jpg' width='1907' height='326' /><img src='/media/1301/green_diffused_2.jpg' width='1907' height='326' /><img src='/media/1337/green_diffused_3.jpg' width='1907' height='326' /><img src='/media/1373/green_diffused_4.jpg' width='1907' height='326' /></div><div class='banner'>
+<div class='banner-content'>
+	<img src='./media/momentos-historicos.jpg' width='855' height='325' />
+</div></div><div class='content clearfix'>
+<ul class='clearfix'>
+<li class='left-column'>
+<h3>Los hechos que marcaron...</h3>
+<h4>El hombre en la luna</h4>
+<p>
+	<object width="350" height="300">
+		<param name="movie" value="http://www.youtube.com/v/Tyeq8tquq1I?version=3&amp;hl=es_MX"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<param name="wmode" value="transparent">
+		<embed src="http://www.youtube.com/v/Tyeq8tquq1I?version=3&amp;hl=es_MX" type="application/x-shockwave-flash" width="350" height="300" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed>
+	</object></p>
+<h4>Revolución Industrial</h4>
+<p>
+	<object width="350" height="300">
+		<param name="movie" value="http://www.youtube.com/v/ikTKgJmEzYs?version=3&amp;hl=es_MX"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<param name="wmode" value="transparent">
+		<embed src="http://www.youtube.com/v/ikTKgJmEzYs?version=3&amp;hl=es_MX" type="application/x-shockwave-flash" width="350" height="300" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed>
+	</object>
+</p>
+<h4></h4><h4></h4><h4></h4>
+</li>
+<li class='right-column'>
+<h3></h3>
+<br /><br />
+<h4>Charles Chaplin</h4>
+<p>
+	<object width="350" height="300">
+		<param name="movie" value="http://www.youtube.com/v/7RHtkFhfJqI?version=3&amp;hl=es_MX"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<param name="wmode" value="transparent">
+		<embed src="http://www.youtube.com/v/7RHtkFhfJqI?version=3&amp;hl=es_MX" type="application/x-shockwave-flash" width="350" height="300" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed>
+	</object>
+</p>
+<h4>La caía del muro de Berlin</h4>
+<p>
+	<object width="350" height="300">
+		<param name="movie" value="http://www.youtube.com/v/BQX5ftKg7sM?version=3&amp;hl=es_MX"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<param name="wmode" value="transparent">
+		<embed src="http://www.youtube.com/v/BQX5ftKg7sM?version=3&amp;hl=es_MX" type="application/x-shockwave-flash" width="350" height="300" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed>
+	</object>
+</p>
+
+<h4></h4><h4></h4><h4></h4></li></ul></div></li>
+<li class='section' id='section-why'>
+	<a id='why' name='why' class='link-anchor'></a>
+	<div class='banner-dif'>
+		<img src='/media/1266/purple_diffused_1.jpg' width='1907' height='326' />
+		<img src='/media/1302/purple_diffused_2.jpg' width='1907' height='326' />
+		<img src='/media/1338/purple_diffused_3.jpg' width='1907' height='326' />
+		<img src='/media/1374/purple_diffused_4.jpg' width='1907' height='326' />
+	</div>
+	<div class='banner'>
+		<div class='banner-content'>
+			<img src='/media/1050/purple_banner_1.jpg' width='855' height='325' />
+			<img src='/media/1086/purple_banner_2.jpg' width='855' height='325' />
+			<img src='/media/1122/purple_banner_3.jpg' width='855' height='325' />
+			<img src='/media/1158/purple_banner_4.jpg' width='855' height='325' />
+		</div>
+	</div>
+	<div class='content clearfix'>
+	<ul class='clearfix'>
+		<li class='left-column'>
+			<h3>¿Por qué es importante una Marca País?</h3><h4></h4>
+			<p>Como una fuente de valor económico, diferenciación y con el fin
+			de corregir estereotipos y clichés.</p>
+
+			<p>Permite construir una ventaja competitiva y global y atraer
+			talento e invención.</p>
+
+			<p>¿Cuál es la propuesta de valor integradora de todas las áreas
+			para Perú?</p>
+
+			<p>El objetivo principal de una Marca País es generar una idea
+			simple, contenedora e integral que logre transmitir con eficacia y
+			contundencia su propuesta de valor.</p>
+
+			<h4></h4><h4></h4><h4></h4>
+		</li>
+		<li class='right-column'>
+			<h3></h3>
+			<h4>Yandira Rojas Condori</h4>
+			<p><img src="./media/yandira.jpg" width="300px" /></p>
+			
+			<h4>Henry Medina Rodriguez</h4>
+			<p><img src="./media/henry.jpg" width="300px" /></p>
+			
+			<h4>Jesus Fabian Cubas</h4>
+			<p></p>
+
+			<h4></h4><h4></h4><h4></h4></li></ul></div>
+		</li>
+	</ul>
+
+  </div>
+
+
+  <div id="footer"></div>
+
+  <script type="text/javascript" src="./js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script type="text/javascript" src="./js/cufon-yui.js"></script>
+  <script type="text/javascript" src="./js/jquery.anchor.js"></script>
+  <script type="text/javascript" src="./js/jquery.color-min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.lite.1.0.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.viewport.mini.js"></script>
+  <script type="text/javascript" src="./js/bree_rg_400.font.js"></script>
+  <script type="text/javascript" src="./js/jquery.countdown.pack.js"></script>  
+  <script type="text/javascript" src="./js/jquery.countdown-es.js"></script>    
+  <script type="text/javascript" src="./js/application.js"></script>
+  <!--[if lt IE 7 ]>
+  <script type="text/javascript" src="./js/dd_belatedpng.js"></script>
+  <script type="text/javascript" src="./js/pngfix.js"></script>
+  <![endif]-->
+  <!--[if lt IE 7 ]>
+  <script type="text/javascript" src="./js/dd_belatedpng.js"></script>
+  <script type="text/javascript" src="./js/pngfix.js"></script>
+  <![endif]-->
+  <script>
+    if($("body").attr("class") == "home"){
+    abrirPopup();
+    }
+  </script>
+</body>
 </html>
+  
