@@ -1,0 +1,5 @@
+body {
+  background: #f0f0f0 url(../img/white_carbon.png);
+  color: #202020;
+  -webkit-font-smoothing: antialiased; 
+}
