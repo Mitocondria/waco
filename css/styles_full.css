@@ -67,16 +67,16 @@ Logo
 h1#logo {
   background: url(../images/logo.png);
   background-repeat: no-repeat;
-  height: 69px;
+  height: 70px;
   left: 0;
   position: absolute;
   top: 27px;
-  width: 168px;
+  width: 160px;
 }
 
 h1 a {
-  width: 168px;
-  height: 69px;  
+  width: 160px;
+  height: 70px; 
   text-indent: -999em;
   display: block;
 }
